@@ -1,0 +1,60 @@
+$apikey = Read-Host "Please enter nuget api key"
+
+
+Write-Host 'Changing Package IDs to YITC.[PID]'
+#RENAME ORIGINAL PACKAGE TO YITC.OPCKG
+$csprojs = (Get-ChildItem -Path * -Filter *.csproj -Recurse -ErrorAction SilentlyContinue -Force).FullName
+Write-Host $csprojs
+foreach ($proj in $csprojs)
+{
+	[xml]$xmlfile = Get-Content $proj
+$originalPackageId = $xmlfile.Project.PropertyGroup.PackageId
+$newPackageId = 'YITC.' + $originalPackageId
+Write-Host 'oPID: ' $xmlfile.Project.PropertyGroup.PackageId
+Write-Host 'nPID: ' $newPackageId
+$xmlfile.Project.PropertyGroup.PackageId = $newPackageId
+$xmlfile.Save($proj)
+Write-Host 'Saved'
+}
+
+
+
+
+
+Write-Host 'PACKING'
+#PACK
+dotnet pack -o packages
+
+#PUBLISH
+set-location ./packages
+
+$files=get-childitem | where {$_.Name -like "*.nupkg" -and $_.Name -notlike "*symbols*"}
+
+foreach($file in $files) {
+  Write-Host "Pushing " + $file
+  nuget push -Source "https://api.nuget.org/v3/index.json" -ApiKey $apikey $file.name
+	
+}
+
+
+
+
+Write-Host 'CHANGE BACK TO ORIGINAL PACKAGE IDs'
+
+#RENAME PACKAGE BACK, to make merges easier when original changes
+$csprojs = (Get-ChildItem -Path * -Filter *.csproj -Recurse -ErrorAction SilentlyContinue -Force).FullName
+Write-Host $csprojs
+foreach ($proj in $csprojs)
+{
+	
+[xml]$xmlfile = Get-Content $proj
+$newPackageId = $xmlfile.Project.PropertyGroup.PackageId
+$originalPackageId = $newPackageId.replace('YITC.','')
+Write-Host 'nPID: ' $xmlfile.Project.PropertyGroup.PackageId
+Write-Host 'oPID: ' $originalPackageId
+$xmlfile.Project.PropertyGroup.PackageId = $originalPackageId
+$xmlfile.Save($proj)
+Write-Host 'Saved'
+}
+
+
