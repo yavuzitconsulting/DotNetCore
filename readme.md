@@ -1,3 +1,15 @@
+#IMPORTANT NOTE
+This project is maintained by rafaelfgx.
+The main reason to provide this project and the packages that come with it are to ensure a consistent version and change history, since the original maintainer/creator seems to overwrite the commit history from time to time (this is not to say that he does not have good reasons too, but i would like to keep track of any changes manually and provide the changes here).
+
+Furthermore, i would like to be able to maintain and update these packages and repositories manually asap, independent of the original project changes.
+
+To conclude, this project is not meant to spoof or cloak the original work in any way, please feel free to contact me if you have any concerns.
+
+Thank you for your understanding, and a big thanks to the original maintainer rafaelfgx for the effort and quality he put into this project.
+
+This readme file will be kept unchanged in the future, links will lead to the original maintainers repository.
+
 # DotNetCore
 
 ![](https://github.com/rafaelfgx/DotNetCore/actions/workflows/publish.yaml/badge.svg)
