@@ -1,6 +1,6 @@
 $backupextension = ".psbak"
 $yitcpostfix = Read-Host "Please enter the yitc-package version, just the number, no dots"
-$yitcversion = '.' + $yitcpostfix + '-yitc';
+$yitcversion = '.' + $yitcpostfix
 Write-Host 'YITC version will be: ' + $yitcversion
 Write-Host 'Please check, then continue to enter apikey.'
 PAUSE
