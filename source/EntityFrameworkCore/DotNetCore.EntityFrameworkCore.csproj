@@ -9,8 +9,8 @@
         <Title>DotNetCore.EntityFrameworkCore</Title>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.3" />
-        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.3" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="6.0.4" />
         <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
     </ItemGroup>
     <ItemGroup>

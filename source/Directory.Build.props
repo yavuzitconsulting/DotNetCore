@@ -14,7 +14,7 @@
         <RepositoryType>git</RepositoryType>
         <RepositoryUrl>https://github.com/rafaelfgx/DotNetCore</RepositoryUrl>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-        <Version>16.26.0</Version>
+        <Version>16.30.0</Version>
     </PropertyGroup>
     <ItemGroup>
         <None Include="readme.md" Pack="true" PackagePath="." />

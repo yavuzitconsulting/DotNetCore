@@ -36,7 +36,11 @@ public static class ServiceCollectionExtensions
 
     public static IMvcBuilder AddJsonOptions(this IMvcBuilder builder)
     {
-        return builder.AddJsonOptions(options => options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull);
+        return builder.AddJsonOptions(options =>
+        {
+            options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+            options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+        });
     }
 
     public static IServiceCollection AddSpaStaticFiles(this IServiceCollection services, string rootPath)

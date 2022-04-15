@@ -9,7 +9,7 @@
         <Title>DotNetCore.Validation</Title>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="FluentValidation" Version="10.3.6" />
+        <PackageReference Include="FluentValidation" Version="10.4.0" />
     </ItemGroup>
     <ItemGroup>
         <ProjectReference Include="..\Results\DotNetCore.Results.csproj" />
