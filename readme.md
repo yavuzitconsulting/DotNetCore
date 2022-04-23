@@ -1,6 +1,9 @@
 #IMPORTANT NOTE
+Fork by YITC (Yavuz IT Consulting).
+
 This project is maintained by rafaelfgx.
-The main reason to provide this project and the packages that come with it are to ensure a consistent version and change history, since the original maintainer/creator seems to overwrite the commit history from time to time (this is not to say that he does not have good reasons too, but i would like to keep track of any changes manually and provide the changes here).
+
+The main reason to provide this project and the packages that come with it are to ensure a consistent version and change history, since the original maintainer/creator seems to overwrite the commit history from time to time (this is not to say that he does not have good reasons to, but i would like to keep track of any changes manually and provide the changes here).
 
 Furthermore, i would like to be able to maintain and update these packages and repositories manually asap, independent of the original project changes.
 
